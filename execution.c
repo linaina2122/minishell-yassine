@@ -6,7 +6,7 @@
 /*   By: linaina <linaina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 22:40:34 by linaina           #+#    #+#             */
-/*   Updated: 2023/08/28 00:21:49 by linaina          ###   ########.fr       */
+/*   Updated: 2023/08/29 00:38:56 by linaina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ char	**lst_to_env(void)
 	while (tmp)
 	{
 		key = ft_strdup(tmp->name);
-		value = ft_strdup(tmp->value);
+		value = (tmp->value);
 		ret[i] = ft_strjoin(key, value);
 		free(value);
 		i++;

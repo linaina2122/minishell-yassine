@@ -6,7 +6,7 @@
 /*   By: linaina <linaina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 01:03:00 by yfawzi            #+#    #+#             */
-/*   Updated: 2023/08/27 23:15:37 by linaina          ###   ########.fr       */
+/*   Updated: 2023/08/28 20:39:54 by linaina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,5 +117,4 @@ void	look_for_new(void);
 void	look_for_old(void);
 
 void    final_cmd();
-t_env 	*ret_new_env(int i);
 #endif

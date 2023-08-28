@@ -6,7 +6,7 @@
 /*   By: linaina <linaina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 15:50:30 by yfawzi            #+#    #+#             */
-/*   Updated: 2023/08/27 22:38:12 by linaina          ###   ########.fr       */
+/*   Updated: 2023/08/29 01:02:46 by linaina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,7 @@ char	*ret_var(t_env *env, char *name)
 		tmp = tmp->next;
 	}
 	free(name);
-	return ("\n");
+	return (0);
 }
 
 char	*check_var(char *str)
@@ -161,8 +161,7 @@ char	*check_var(char *str)
 	k = pre_varlen(str);
 	if ((size_t)k == ft_strlen(str) || k == -1)
 		return (str);
-	ret = malloc(k  + 1);
-	ret = 0;
+	ret = ft_calloc(k + 1, k + 1);
 	while (str[i])
 	{
 		hol = ft_substr(str, i, k);
@@ -327,6 +326,7 @@ int main(int arc, char **arv, char **enva)
 		glo.args = args;
 		ret_fd();
 		final_cmd();
+		// ft_printer(glo.args);
 		execution();
 		close_fd();
 		ft_free(args);

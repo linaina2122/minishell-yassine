@@ -6,7 +6,7 @@
 /*   By: linaina <linaina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 00:52:47 by yfawzi            #+#    #+#             */
-/*   Updated: 2023/08/28 00:00:09 by linaina          ###   ########.fr       */
+/*   Updated: 2023/08/28 23:52:48 by linaina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,6 @@ int	ft_spaces_len(char	*str)
 				ret--;
 		}
 	}
-	// printf("%d\n", ret);
 	return (ret);
 }
 

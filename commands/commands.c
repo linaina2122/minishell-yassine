@@ -6,7 +6,7 @@
 /*   By: linaina <linaina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:15:05 by yfawzi            #+#    #+#             */
-/*   Updated: 2023/08/27 23:15:06 by linaina          ###   ########.fr       */
+/*   Updated: 2023/08/29 01:02:36 by linaina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void	echo(char **command)
 	j = 1;
 	k = 0;
 	if (!command[1])
+	{
 		printf("\n");
+		return	;
+	}
 	while (command[i])
 	{
 		if (command[i][0] == '-')
@@ -173,64 +176,6 @@ void	env(void)
 	}
 }
 
-char	*add_eq(char *str)
-{
-	char	*ret;
-	int		i;
-
-	i = 0;
-	ret = malloc(ft_strlen(str) + 2);
-	while (str[i])
-	{
-		ret[i] = str[i];
-		i++;
-	}
-	ret[i] = '=';
-	ret[i + 1] = 0;
-	free(str);
-	return (ret);
-}
-
-void ft_unset(char	**str)
-{
-	t_env	*tmp;
-	t_env	*tmp1;
-	int		i;
-	int		j;
-	int		k;
-
-	i = 1;
-	j = 0;
-	k = 0;
-	while (str[i])
-	{
-		str[i] = add_eq(str[i]);
-		i++;
-	}
-	i = 1;
-	while (str[i])
-	{
-		tmp = glo.env;
-		tmp1 = glo.env;
-		while (tmp1)
-		{
-			if (ft_strlen(str[i]) == ft_strlen(tmp1->name))
-			{
-				if (ft_strcmp(str[i], tmp1->name) == 1)
-				{
-					glo.env = ret_new_env(k);
-					break ;
-				}
-			}
-			if (j > 0)
-				tmp = tmp->next;
-			tmp1 = tmp1->next;
-			j++;
-			k++;
-		}
-		i++;
-	}
-}
 
 int	check_for_export(char *str)
 {
